@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>YouTube Search</title>
+
+</head>
+
+<body>
+
+    <h1>YouTube Search</h1>
+
+    <form method="GET" action="/search">
+
+        <input name="q" placeholder="Search for videos or playlists" size="40" />
+
+        <button type="submit">Search</button>
+
+    </form>
+
+    {% if error %}
+
+    <p style="color:red;">{{ error }}</p>
+
+    {% endif %}
+
+</body>
+
+</html>
