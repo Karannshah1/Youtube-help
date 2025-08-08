@@ -6,6 +6,8 @@ app = Flask(__name__,template_folder="../templates")
 YTDL_OPTS = {
     'quiet': True,
     'skip_download': True,
+    'nocachedir': True,                # Disable cache dir usage
+    'cachedir': '/tmp/yt-dlp-cache',  # Use /tmp if caching needed (optional)
 }
 
 @app.route('/', methods=['GET'])
