@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template, redirect, url_for
 import yt_dlp
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder="../templates")
 
 YTDL_OPTS = {
     'quiet': True,
