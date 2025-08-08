@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Results for "{{ query }}"</title>
+
+</head>
+
+<body>
+
+    <h1>Results for "{{ query }}"</h1>
+
+    <a href="/">New Search</a>
+
+    <ul>
+
+        {% for r in results %}
+
+        <li>
+
+            <img src="{{ r.thumbnail }}" alt="thumbnail" width="120" />
+
+            <strong>{{ r.title }}</strong> ({{ r.type }}) by {{ r.channel }} 
+
+            {% if r.duration %} - Duration: {{ r.duration }} {% endif %}
+
+            <br/>
+
+            <a href="{{ url_for('watch', entry_type=r.type, id_=r.id) }}">Watch</a>
+
+        </li>
+
+        {% endfor %}
+
+    </ul>
+
+</body>
+
+</html>
